@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart School Zone Navigation Simulator - Hyderabad</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="header">
+                <h1>GPS Based Smart Speed control System </h1>
+                <p class="subtitle">Hyderabad Simulation</p>
+            </div>
+
+            <!-- Route Info -->
+            <div class="section">
+                <h2>Route Details</h2>
+                <div class="route-info">
+                    <div class="location">
+                        <span class="label">Start:</span>
+                        <span class="value">HITEC City</span>
+                    </div>
+                    <div class="location">
+                        <span class="label">End:</span>
+                        <span class="value">Charminar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speed Control -->
+            <div class="section">
+                <h2>Speed Control</h2>
+                <div class="speed-control">
+                    <label for="speedSlider">Base Speed: <span id="sliderValue">50</span> km/h</label>
+                    <input type="range" id="speedSlider" min="20" max="80" value="50" step="5">
+                </div>
+            </div>
+
+            <!-- Telemetry -->
+            <div class="section">
+                <h2>Telemetry</h2>
+                <div class="telemetry">
+                    <div class="metric">
+                        <span class="metric-label">Current Speed:</span>
+                        <span class="metric-value" id="currentSpeed">0 km/h</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Advised Speed:</span>
+                        <span class="metric-value" id="advisedSpeed">50 km/h</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Zone Status:</span>
+                        <span class="metric-value" id="zoneStatus">Normal</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Distance:</span>
+                        <span class="metric-value" id="distance">0.0 km</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">ETA:</span>
+                        <span class="metric-value" id="eta">--:--</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Status:</span>
+                        <span class="metric-value" id="simStatus">Ready</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="section">
+                <h2>Controls</h2>
+                <div class="controls">
+                    <button id="planRoute" class="btn btn-primary">Plan Route</button>
+                    <button id="startSim" class="btn btn-success" disabled>Start Simulation</button>
+                    <button id="pauseSim" class="btn btn-warning" disabled>Pause</button>
+                    <button id="resetSim" class="btn btn-danger">Reset</button>
+                </div>
+            </div>
+
+            <!-- Event Log -->
+            <div class="section">
+                <h2>Event Log</h2>
+                <div class="event-log" id="eventLog"></div>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
